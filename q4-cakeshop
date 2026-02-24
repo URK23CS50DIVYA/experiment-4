@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cake Shop</title>
+<style>
+    body{
+        font-family: Arial;
+        text-align:center;
+        background:#f8f9fa;
+    }
+    h2{
+        background:red;
+        color:white;
+        padding:10px;
+    }
+    .cakes img{
+        width:150px;
+        height:120px;
+        margin:10px;
+        border-radius:10px;
+    }
+    input{
+        width:200px;
+        padding:5px;
+        margin:5px;
+    }
+    button{
+        padding:10px 20px;
+        background:blue;
+        color:white;
+        border:none;
+        cursor:pointer;
+        border-radius:5px;
+    }
+    .total{
+        margin-top:15px;
+        font-size:20px;
+        color:green;
+        font-weight:bold;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>CAKE SHOP</h2>
+
+<div class="cakes">
+    <img src="C:\Users\urk23cs5012\Downloads\colourcake.jpg" alt="Cake">
+    <img src="C:\Users\urk23cs5012\Downloads\brown cake.jpg" alt="Cake">
+    <img src="C:\Users\urk23cs5012\Downloads\milkcake.jpg" alt="Cake">
+    <img src="C:\Users\urk23cs5012\Downloads\blackforest.jpg"alt="Cake">
+</div>
+
+<p>Color Cake (₹300)</p>
+<input type="number" id="c1" placeholder="Quantity">
+
+<p>Brown Cake (₹200)</p>
+<input type="number" id="c2" placeholder="Quantity">
+
+<p>Milky Cake (₹250)</p>
+<input type="number" id="c3" placeholder="Quantity">
+
+<p>Black Forest Cake (₹350)</p>
+<input type="number" id="c4" placeholder="Quantity">
+
+<br>
+<button onclick="calculate()">Place Order</button>
+
+<div class="total" id="totalPrice">
+    Total Price = ₹0
+</div>
+
+<script>
+function calculate(){
+
+    let q1 = document.getElementById("c1").value || 0;
+    let q2 = document.getElementById("c2").value || 0;
+    let q3 = document.getElementById("c3").value || 0;
+    let q4 = document.getElementById("c4").value || 0;
+
+    let total = (q1*300) + (q2*200) + (q3*250) + (q4*350);
+
+    document.getElementById("totalPrice").innerHTML =
+    "Total Price = ₹" + total;
+}
+</script>
+
+</body>
+</html>
