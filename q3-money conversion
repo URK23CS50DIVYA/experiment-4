@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Currency Converter</title>
+<style>
+    body{
+        font-family: Arial;
+        background: linear-gradient(to right,#dfe9f3,#ffffff);
+        text-align:center;
+    }
+    .container{
+        width:350px;
+        margin:40px auto;
+        padding:20px;
+        border:2px solid black;
+        border-radius:10px;
+        background:white;
+    }
+    h2{
+        color:blue;
+    }
+    input,select{
+        width:90%;
+        padding:8px;
+        margin:10px;
+    }
+    .result{
+        margin-top:15px;
+        padding:10px;
+        background:linear-gradient(to right,#1e3c72,#2a5298);
+        color:white;
+        border-radius:20px;
+        font-weight:bold;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Currency Converter</h2>
+
+    <label>Amount:</label><br>
+    <input type="number" id="amount">
+
+    <label>From:</label><br>
+    <select id="from" onchange="convert()">
+        <option value="1">USD</option>
+        <option value="0.85">EUR</option>
+        <option value="74">INR</option>
+        <option value="110">JPY</option>
+    </select>
+
+    <label>To:</label><br>
+    <select id="to" onchange="convert()">
+        <option value="74">INR</option>
+        <option value="1">USD</option>
+        <option value="0.85">EUR</option>
+        <option value="110">JPY</option>
+    </select>
+
+    <div class="result" id="output">
+        Amount = 0
+    </div>
+</div>
+
+<script>
+function convert(){
+    let amount = document.getElementById("amount").value;
+    let from = document.getElementById("from").value;
+    let to = document.getElementById("to").value;
+
+    if(amount !== ""){
+        let result = (amount / from) * to;
+        document.getElementById("output").innerHTML =
+        "Amount = " + result.toFixed(2);
+    }
+}
+</script>
+
+</body>
+</html>
